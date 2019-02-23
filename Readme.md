@@ -1,3 +1,5 @@
+# Machine learning model for our project in Campus Hack 2019!
+
 # PoetRNN
 
 This project is a *Python* implementation of a LSTM recurrent neural network designed to learn and produce short verse poetry. It stemmed from me reading Andrej Karpathy's [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/), thinking it was too good to be true, and wanting to try it for myself. Since I am a bit of python novice I decided I would learn more if I wrote things from scratch, and so here we are. Despite being written with poetry in mind it is likely flexible enough to learn and produce other types of data (In fact, if you think of something cool and creative to do with it I would love to hear about it). If you are interested in a more detailed description as well as seeing some of the outputs of the model check out my [blog post](http://sballas8.github.io/2015/08/11/Poet-RNN.html) 
