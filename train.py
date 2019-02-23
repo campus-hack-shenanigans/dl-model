@@ -25,8 +25,13 @@ def main(params):
     labels=[]
     with open(data_filename,'rb') as my_file:
         reader=csv.reader(my_file)
+        # for row in reader:
+        #     poems.append(prep.poem_to_mat(row[0],poem_dict))
         for row in reader:
-            poems.append(prep.poem_to_mat(row[0],poem_dict))
+            if len(row[0]) > 50:
+                pass
+            else:
+                poems.append(prep.poem_to_mat(row[0], poem_dict))
     #generate the labels
     for poem in poems:
         labels.append(prep.generate_labels(poem,poem_dict))
