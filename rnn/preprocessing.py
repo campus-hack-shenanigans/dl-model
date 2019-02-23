@@ -40,18 +40,21 @@ def generate_labels(poem_mat,dictionary):
     
 #convert a batch of poems to a 3-tensor along with a tensor of labels and a mask
 def poem_batch_to_tensor(X,y=None):
-    b=len(X)
-    v=len(X[0][0])
-    #print b,v
-    len_list=np.array([len(X[i]) for i in range(b)])
-    m=np.max(len_list)
-    num_chars=np.sum(len_list) # useful for 
-    #pad with zeros so they are all same length
-    X_mat=np.array([np.vstack((np.array(X[i]),np.zeros((m-len_list[i],v)))) for i in range(b)]) 
-    X_mat=np.swapaxes(X_mat,0,1)
-    y_mat=np.array([np.hstack((np.array(y[i]),np.zeros(m-len_list[i]))) for i in range(b)],dtype=int).T
-    #create a mask of so that later we only accumulate cost for entries that actually correspond to letters
-    mask=np.ones((m,b))
-    for i in range(b):
-        mask[len_list[i]:,i]=0
-    return X_mat, mask, num_chars,y_mat
+    if(X != None):        
+        b=len(X)
+        v=len(X[0][0])
+        #print b,v
+        len_list=np.array([len(X[i]) for i in range(b)])
+        m=np.max(len_list)
+        num_chars=np.sum(len_list) # useful for 
+        #pad with zeros so they are all same length
+        X_mat=np.array([np.vstack((np.array(X[i]),np.zeros((m-len_list[i],v)))) for i in range(b)]) 
+        X_mat=np.swapaxes(X_mat,0,1)
+        y_mat=np.array([np.hstack((np.array(y[i]),np.zeros(m-len_list[i]))) for i in range(b)],dtype=int).T
+        #create a mask of so that later we only accumulate cost for entries that actually correspond to letters
+        mask=np.ones((m,b))
+        for i in range(b):
+            mask[len_list[i]:,i]=0
+        return X_mat, mask, num_chars,y_mat
+    else:
+        print'Problem in poem_batch_to_tensor!'
