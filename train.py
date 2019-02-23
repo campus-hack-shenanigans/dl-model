@@ -28,7 +28,7 @@ def main(params):
         # for row in reader:
         #     poems.append(prep.poem_to_mat(row[0],poem_dict))
         for row in reader:
-            if len(row[0]) > 20:
+            if len(row[0]) > 35:
                 pass
             else:
                 poems.append(prep.poem_to_mat(row[0], poem_dict))
