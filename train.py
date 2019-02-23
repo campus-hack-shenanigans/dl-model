@@ -89,7 +89,7 @@ if __name__ == "__main__":
     parser.add_argument('--hidden_size', dest='hidden_size', type=int, default=128, help='size of hidden layer in RNNs')
     parser.add_argument('-l', '--learning_rate', dest='learning_rate', type=float, default=1e-3, help='solver learning rate')
     parser.add_argument('-c', '--regc', dest='regc', type=float, default=1e-8, help='regularization strength')
-    parser.add_argument('-m', '--max_epochs', dest='max_epochs', type=int, default=50, help='number of epochs to train for')
+    parser.add_argument('-m', '--max_epochs', dest='max_epochs', type=int, default=500, help='number of epochs to train for')
     parser.add_argument('--decay_rate', dest='decay_rate', type=float, default=0.999, help='decay for learning rate')
     parser.add_argument('--decay_after', dest='decay_after',type=int, default=1,help='number of epochs to begin decaying learning rate after')
     parser.add_argument('-b', '--batch_size', dest='batch_size', type=int, default=100, help='batch size')
