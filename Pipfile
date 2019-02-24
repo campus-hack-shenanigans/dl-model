@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 numpy = "*"
 pandas = "*"
+google-cloud-texttospeech = "*"
 
 [requires]
 python_version = "2.7"
